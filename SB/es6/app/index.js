@@ -84,3 +84,38 @@ console.log(multiply(2, 3)) // 6
 
 import defMultiply from './math'
 console.log(defMultiply(3, 4)) // 12
+
+
+// Objects, classes
+console.log('Objects, classes, prototypes')
+import Lion from './Lion'
+
+let simba = new Lion('Simba', 2, 'golden')
+console.log(simba)
+simba.hello()
+
+
+// Prototypes
+function Wizard(name, house, pet) {
+  this.name = name
+  this.house = house
+  this.pet = pet
+
+  this.greet = () => `Hi, I'm ${this.name} from ${this.house}.`
+}
+
+// declare a new attribute
+Wizard.prototype.pet_name;
+
+// declare a new method
+// Wizard.prototype.info = () => `I have a ${this.pet} named ${this.pet_name}`
+// Doesn't work since arrow function doesn't create this object in local scope
+Wizard.prototype.info = function() {
+  return `I have a ${this.pet} named ${this.pet_name}`
+}
+
+let harry = new Wizard("Harry Potter", "Gryffindor", "Owl")
+harry.pet_name = "Hedwig"
+console.log(harry)
+console.log(harry.greet())
+console.log(harry.info())
