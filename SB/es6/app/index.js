@@ -37,10 +37,16 @@ console.log(`name is ${name} and age is ${age}.`);
 
 // With map helper methods:
 let values = [20, 30, 40]
+let doubledUgly = values.map(function(n){
+  return n*2
+})
 let doubled = values.map((n) => {
   return n*2
 })
-let doubledWithLessCode = values.map((n) => n*2)
+let doubledBeauty = values.map((n) => n*2)
+// console.log(doubledUgly)
+// console.log(doubled)
+// console.log(doubledBeauty)
 
 // With filter helper methods:
 let points = [15, 3, 18, 23, 10, 32]
@@ -91,8 +97,8 @@ console.log('Objects, classes, prototypes')
 import Lion from './Lion'
 
 let simba = new Lion('Simba', 2, 'golden')
-console.log(simba)
-simba.hello()
+console.log(simba)  // Lion {name: "Simba", height: 2, color: "golden"}
+simba.hello()  // Hi! This is Simba from Pride Rock!
 
 
 // Prototypes
@@ -119,3 +125,29 @@ harry.pet_name = "Hedwig"
 console.log(harry)
 console.log(harry.greet())
 console.log(harry.info())
+
+
+// Data Structures  Lecture 63 - 65
+console.log('Data Structures - Set')
+
+let aSet = new Set()
+aSet.add(5)
+aSet.add(43)
+aSet.add('woohoo')
+aSet.add({x: 50, y: 200})
+console.log(aSet)
+console.log(aSet.size)  // 4
+console.log(aSet.has(5))  // true
+
+let numbers = [5, 2, 12, 76, 100, 2]
+let aSet2 = new Set(numbers)
+console.log(aSet2)
+
+for (let elem of aSet2){
+  console.log(elem)
+}
+
+let chars = 'asdlfkjhasclkasjdchfaskjdhscjl'
+let chars_array = chars.split('')
+let chars_set = new Set(chars_array)
+console.log(chars_set)
