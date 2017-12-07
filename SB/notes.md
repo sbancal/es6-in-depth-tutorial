@@ -1,6 +1,8 @@
 # lecture 11
 
-+ DOM : Document Object Model. Gives full access from JavaScript to dynamically create HTML with specific methods that modify the object representations of HTML elements.
++ DOM : Document Object Model. Gives full access from JavaScript to dynamically
+create HTML with specific methods that modify the object representations of HTML
+elements.
 
 
 # lecture 17
@@ -78,3 +80,18 @@ let king = {name: 'Mufasa', age: 32}
 let {name, age} = king
 console.log(`name is ${name} and age is ${age}.`)
 ~~~
+
+
+# Lecture 70 - 75
+
++ Closures refer to functions that remember their creation environment and can
+further reference that environment's independent variables.
+
++ Lexical scoping refers to the JS concept of programs keeping track of variable
+locations to understand in which scopes they can be accessed,
+
++ Function factories create functions based on returning inner functions that
+manipulate its own arguments and the arguments of the outer function.
+
++ Data encapsulation and private methods don't exist natively in JS but can be
+emulated with closures.

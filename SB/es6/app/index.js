@@ -183,3 +183,61 @@ for (let i=0; i<chars.length; i++){
   }
 }
 console.log(allChars)
+
+
+// Closures  Lecture 70 - 75
+
+let call = () => {
+  let secret = 'blabla\'s secret'
+  let reveal = () => {
+    console.log(secret)
+  }
+  return reveal
+}
+
+let unveil = call()
+unveil()  // blabla's secret
+
+
+
+const addSuffix = (x) => {
+  const concat = (y) => {
+    return y + x
+  }
+  return concat
+}
+
+let add_ness = addSuffix('ness')
+let add_ful = addSuffix('ful')
+console.log(add_ness('happi'))  // happiness
+console.log(add_ful('fruit'))  // fruitful
+
+
+const product = x => y => x*y
+const double = product(2)
+const times5 = product(5)
+console.log(`2*7 = ${double(7)}`)
+console.log(`5*7 = ${times5(7)}`)
+
+
+
+const budget = () => {
+  let balance = 0
+
+  const incrBal = (x) => {
+    balance += x
+  }
+
+  const deposit20 = () => incrBal(20)
+  const withDraw20 = () => incrBal(-20)
+  const check = () => balance
+
+  return { deposit20, withDraw20, check }
+}
+
+let wallet = budget()
+
+wallet.deposit20()
+wallet.deposit20()
+wallet.withDraw20()
+console.log(wallet.check())
