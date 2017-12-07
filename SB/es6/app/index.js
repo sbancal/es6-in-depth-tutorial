@@ -151,3 +151,35 @@ let chars = 'asdlfkjhasclkasjdchfaskjdhscjl'
 let chars_array = chars.split('')
 let chars_set = new Set(chars_array)
 console.log(chars_set)
+console.log(chars_set.values()) // Iterator through the values
+
+
+
+// Data Structures  Lecture 66 - 69
+console.log('Data Structures - Map')
+
+let aMap = new Map()
+aMap.set('string key', 'return value for a string key')
+aMap.set({a: 'key'}, 'return value for an object key')
+aMap.set(() => {}, 'return value for a function key')
+console.log(aMap)  // Map(3) {"string key" => "return value for a string key", {…} => "return value for an object key", ƒ => "return value for a function key"}
+
+let aMap2 = new Map([[1, 'one'], [2, 'two'], [3, 'three']])
+console.log(aMap2)  // Map(3) {1 => "one", 2 => "two", 3 => "three"}
+
+for (let [key, val] of aMap2){
+  console.log(`${key} points to ${val}`)
+}
+
+
+// let chars = 'asdlfkjhasclkasjdchfaskjdhscjl'
+let allChars = new Map()
+for (let i=0; i<chars.length; i++){
+  let char = chars[i]
+  if(allChars.has(char)){
+    allChars.set(char, allChars.get(char) + 1)
+  }else{
+    allChars.set(char, 1)
+  }
+}
+console.log(allChars)
