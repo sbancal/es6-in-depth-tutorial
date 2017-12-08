@@ -287,3 +287,28 @@ console.log(it.next().value) // 10
 console.log(it.next().value) // 20
 console.log(it.next().value) // 30
 console.log(it.next().value) // undefined
+
+
+
+// Promises Lecture 82 - 86
+
+let p = new Promise((resolve, reject) => {
+  setTimeout(() => resolve('Value resolved'), 3000)
+  // reject('error msg')
+})
+
+p.then(response => console.log(`success: ${response}`))
+ .catch(error => console.log(`error: ${error}`))
+
+console.log('msg displayed after promise launched')
+
+
+const root1 = 'http://jsonplaceholder.typicode.com/posts/1'
+fetch(root1, { method: 'GET'})
+  .then(response => response.json())
+  .then(json => console.log(json))
+
+const root2 = 'https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699'
+fetch(root2, { method: 'GET'})
+  .then(response => response.json())
+  .then(json => console.log(json))
