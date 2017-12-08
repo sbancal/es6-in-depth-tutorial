@@ -312,3 +312,13 @@ const root2 = 'https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699'
 fetch(root2, { method: 'GET'})
   .then(response => response.json())
   .then(json => console.log(json))
+
+
+
+// ES7 es2016
+
+console.log(`${Math.pow(2, 5)}`)  // old
+console.log(`${2**5}`)  // new
+
+console.log('wonderful'.includes('wonder'))  // true
+console.log([1, 2, 3].includes(4))  // false
