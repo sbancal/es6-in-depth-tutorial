@@ -95,3 +95,14 @@ manipulate its own arguments and the arguments of the outer function.
 
 + Data encapsulation and private methods don't exist natively in JS but can be
 emulated with closures.
+
+
+
+# Lecture 87 - 91 ES8
+
++ The async keyword introduces asynchronous functions in ecmascript and allow
+for more controlled flow of asynchronous functions
+
++ the await keyword adds blocking to asynchronous functions in order to
+temporarily stop the execution of statements and logic until certain data
+finishes returning a response

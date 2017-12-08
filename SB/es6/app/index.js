@@ -336,3 +336,38 @@ console.log(obj)  // {a: "one", b: "two", c: "three"}
 for (let a of Object.entries(obj)){
   console.log(`k: ${a[0]} v: ${a[1]}`)
 }
+
+
+// async await
+
+async function async_one() {
+  return 'one'
+}
+
+async function async_two() {
+  throw new Error('Issue during async_two')
+}
+
+async function async_three() {
+  return 'three'
+}
+
+async function async_four() {
+  const one = await async_one()
+  console.log(one)
+  const three = await async_three()
+  console.log(three)
+}
+
+async function async_five() {
+  const [one, three] = await Promise.all(
+    [async_one(), async_three()]
+  )
+  console.log(one, three)
+}
+
+async_one().then(value => console.log(`async value is ${value}`))
+async_two().catch(error => console.log(error))
+
+async_four()
+async_five()
