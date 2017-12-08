@@ -322,3 +322,17 @@ console.log(`${2**5}`)  // new
 
 console.log('wonderful'.includes('wonder'))  // true
 console.log([1, 2, 3].includes(4))  // false
+
+
+// ES8 es2017
+
+let obj = { a: 'one', b: 'two', c: 'three' }
+console.log(`keys: ${Object.keys(obj)}`)  // keys: a,b,c
+console.log(`values: ${Object.values(obj)}`)  // values: one,two,three
+console.log(`entries: ${Object.entries(obj)}`)  // entries: a,one,b,two,c,three
+console.log(Object.entries(obj))  // (3) [Array(2), Array(2), Array(2)]
+console.log(obj)  // {a: "one", b: "two", c: "three"}
+
+for (let a of Object.entries(obj)){
+  console.log(`k: ${a[0]} v: ${a[1]}`)
+}
