@@ -241,3 +241,49 @@ wallet.deposit20()
 wallet.deposit20()
 wallet.withDraw20()
 console.log(wallet.check())
+
+
+
+// Generators Lecture 76 - 81
+
+function* letterMaker() {
+  yield 'a'
+  yield 'b'
+  yield 'c'
+}
+
+let letterGen = letterMaker()
+console.log(letterGen.next().value)  // a
+console.log(letterGen.next().value)  // b
+console.log(letterGen.next().value)  // c
+console.log(letterGen.next().value)  // undefined
+
+
+function* counterGen() {
+  let count = 0
+  while (true){
+    let reset = yield count += 1
+    if (reset){
+      count = 0
+    }
+  }
+}
+
+let counter = counterGen()
+console.log(counter.next().value) // 1
+console.log(counter.next().value) // 2
+console.log(counter.next().value) // 3
+console.log(counter.next().value) // 4
+console.log(counter.next(true).value) // 1
+console.log(counter.next().value) // 2
+
+
+function* arrayIterator() {
+  yield* arguments
+}
+
+let it = arrayIterator(10, 20, 30)
+console.log(it.next().value) // 10
+console.log(it.next().value) // 20
+console.log(it.next().value) // 30
+console.log(it.next().value) // undefined
